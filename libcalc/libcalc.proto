@@ -5,12 +5,14 @@ package libcalc;
 option go_package = "./libcalc";
 
 message Libcalc {
+  int32 addend1 = 1;
 
+  int32 addend2 = 2;
 }
 
 // will wrap the Greeting
-message LibcalcRequest { Libcalc greeting = 1; }
-message LibcalcResponse { string result = 1; }
+message LibcalcRequest { Libcalc request = 1; }
+message LibcalcResponse { int32 result = 1; }
 
 service LibcalcService {
   // define unary API
