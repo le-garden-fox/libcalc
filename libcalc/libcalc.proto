@@ -1,0 +1,18 @@
+syntax = "proto3";
+package libcalc;
+
+// this is the path folder name as well
+option go_package = "./libcalc";
+
+message Libcalc {
+
+}
+
+// will wrap the Greeting
+message LibcalcRequest { Libcalc greeting = 1; }
+message LibcalcResponse { string result = 1; }
+
+service LibcalcService {
+  // define unary API
+  rpc Libcalc(LibcalcRequest) returns (LibcalcResponse) {};
+}
