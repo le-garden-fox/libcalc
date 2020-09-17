@@ -6,17 +6,16 @@ option go_package = "./libcalc";
 
 message Libcalc {
   int32 addend1 = 1;
-
   int32 addend2 = 2;
 }
 
-// will wrap the Greeting
 message LibcalcRequest { Libcalc request = 1; }
 message LibcalcResponse { int32 result = 1; }
 
 service LibcalcService {
   // define unary API
   rpc Libcalc(LibcalcRequest) returns (LibcalcResponse) {};
+  rpc Factor(LibcalcFactorsRequest) returns (stream LibcalcFactorsResponse) {};
 }
 
 message LibcalcFactorsRequest {
@@ -25,8 +24,3 @@ message LibcalcFactorsRequest {
 
 message LibcalcFactorsResponse { string result = 1; }
 
-
-service LibcalcFactorService {
-  // define unary API
-  rpc Factor(LibcalcFactorsRequest) returns (stream LibcalcFactorsResponse) {};
-}
