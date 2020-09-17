@@ -179,6 +179,100 @@ func (x *LibcalcResponse) GetResult() int32 {
 	return 0
 }
 
+type LibcalcFactorsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Kint int32 `protobuf:"varint,1,opt,name=kint,proto3" json:"kint,omitempty"`
+}
+
+func (x *LibcalcFactorsRequest) Reset() {
+	*x = LibcalcFactorsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_libcalc_libcalc_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LibcalcFactorsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LibcalcFactorsRequest) ProtoMessage() {}
+
+func (x *LibcalcFactorsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_libcalc_libcalc_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LibcalcFactorsRequest.ProtoReflect.Descriptor instead.
+func (*LibcalcFactorsRequest) Descriptor() ([]byte, []int) {
+	return file_libcalc_libcalc_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *LibcalcFactorsRequest) GetKint() int32 {
+	if x != nil {
+		return x.Kint
+	}
+	return 0
+}
+
+type LibcalcFactorsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result string `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+}
+
+func (x *LibcalcFactorsResponse) Reset() {
+	*x = LibcalcFactorsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_libcalc_libcalc_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LibcalcFactorsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LibcalcFactorsResponse) ProtoMessage() {}
+
+func (x *LibcalcFactorsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_libcalc_libcalc_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LibcalcFactorsResponse.ProtoReflect.Descriptor instead.
+func (*LibcalcFactorsResponse) Descriptor() ([]byte, []int) {
+	return file_libcalc_libcalc_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *LibcalcFactorsResponse) GetResult() string {
+	if x != nil {
+		return x.Result
+	}
+	return ""
+}
+
 var File_libcalc_libcalc_proto protoreflect.FileDescriptor
 
 var file_libcalc_libcalc_proto_rawDesc = []byte{
@@ -194,13 +288,26 @@ var file_libcalc_libcalc_proto_rawDesc = []byte{
 	0x63, 0x61, 0x6c, 0x63, 0x52, 0x07, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x29, 0x0a,
 	0x0f, 0x4c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05,
-	0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x32, 0x50, 0x0a, 0x0e, 0x4c, 0x69, 0x62, 0x63,
-	0x61, 0x6c, 0x63, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3e, 0x0a, 0x07, 0x4c, 0x69,
-	0x62, 0x63, 0x61, 0x6c, 0x63, 0x12, 0x17, 0x2e, 0x6c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x2e,
-	0x4c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18,
-	0x2e, 0x6c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x2e, 0x4c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x0b, 0x5a, 0x09, 0x2e, 0x2f,
-	0x6c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x22, 0x2b, 0x0a, 0x15, 0x4c, 0x69, 0x62, 0x63,
+	0x61, 0x6c, 0x63, 0x46, 0x61, 0x63, 0x74, 0x6f, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x12, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x04, 0x6b, 0x69, 0x6e, 0x74, 0x22, 0x30, 0x0a, 0x16, 0x4c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63,
+	0x46, 0x61, 0x63, 0x74, 0x6f, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x32, 0x50, 0x0a, 0x0e, 0x4c, 0x69, 0x62, 0x63, 0x61,
+	0x6c, 0x63, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3e, 0x0a, 0x07, 0x4c, 0x69, 0x62,
+	0x63, 0x61, 0x6c, 0x63, 0x12, 0x17, 0x2e, 0x6c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x2e, 0x4c,
+	0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e,
+	0x6c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x2e, 0x4c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x32, 0x65, 0x0a, 0x14, 0x4c, 0x69, 0x62,
+	0x63, 0x61, 0x6c, 0x63, 0x46, 0x61, 0x63, 0x74, 0x6f, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x12, 0x4d, 0x0a, 0x06, 0x46, 0x61, 0x63, 0x74, 0x6f, 0x72, 0x12, 0x1e, 0x2e, 0x6c, 0x69,
+	0x62, 0x63, 0x61, 0x6c, 0x63, 0x2e, 0x4c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x46, 0x61, 0x63,
+	0x74, 0x6f, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1f, 0x2e, 0x6c, 0x69,
+	0x62, 0x63, 0x61, 0x6c, 0x63, 0x2e, 0x4c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x46, 0x61, 0x63,
+	0x74, 0x6f, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x30, 0x01,
+	0x42, 0x0b, 0x5a, 0x09, 0x2e, 0x2f, 0x6c, 0x69, 0x62, 0x63, 0x61, 0x6c, 0x63, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -215,18 +322,22 @@ func file_libcalc_libcalc_proto_rawDescGZIP() []byte {
 	return file_libcalc_libcalc_proto_rawDescData
 }
 
-var file_libcalc_libcalc_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_libcalc_libcalc_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_libcalc_libcalc_proto_goTypes = []interface{}{
-	(*Libcalc)(nil),         // 0: libcalc.Libcalc
-	(*LibcalcRequest)(nil),  // 1: libcalc.LibcalcRequest
-	(*LibcalcResponse)(nil), // 2: libcalc.LibcalcResponse
+	(*Libcalc)(nil),                // 0: libcalc.Libcalc
+	(*LibcalcRequest)(nil),         // 1: libcalc.LibcalcRequest
+	(*LibcalcResponse)(nil),        // 2: libcalc.LibcalcResponse
+	(*LibcalcFactorsRequest)(nil),  // 3: libcalc.LibcalcFactorsRequest
+	(*LibcalcFactorsResponse)(nil), // 4: libcalc.LibcalcFactorsResponse
 }
 var file_libcalc_libcalc_proto_depIdxs = []int32{
 	0, // 0: libcalc.LibcalcRequest.request:type_name -> libcalc.Libcalc
 	1, // 1: libcalc.LibcalcService.Libcalc:input_type -> libcalc.LibcalcRequest
-	2, // 2: libcalc.LibcalcService.Libcalc:output_type -> libcalc.LibcalcResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
+	3, // 2: libcalc.LibcalcFactorService.Factor:input_type -> libcalc.LibcalcFactorsRequest
+	2, // 3: libcalc.LibcalcService.Libcalc:output_type -> libcalc.LibcalcResponse
+	4, // 4: libcalc.LibcalcFactorService.Factor:output_type -> libcalc.LibcalcFactorsResponse
+	3, // [3:5] is the sub-list for method output_type
+	1, // [1:3] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -274,6 +385,30 @@ func file_libcalc_libcalc_proto_init() {
 				return nil
 			}
 		}
+		file_libcalc_libcalc_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LibcalcFactorsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_libcalc_libcalc_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LibcalcFactorsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -281,9 +416,9 @@ func file_libcalc_libcalc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_libcalc_libcalc_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   5,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   2,
 		},
 		GoTypes:           file_libcalc_libcalc_proto_goTypes,
 		DependencyIndexes: file_libcalc_libcalc_proto_depIdxs,
@@ -374,5 +509,106 @@ var _LibcalcService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
+	Metadata: "libcalc/libcalc.proto",
+}
+
+// LibcalcFactorServiceClient is the client API for LibcalcFactorService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type LibcalcFactorServiceClient interface {
+	// define unary API
+	Factor(ctx context.Context, in *LibcalcFactorsRequest, opts ...grpc.CallOption) (LibcalcFactorService_FactorClient, error)
+}
+
+type libcalcFactorServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewLibcalcFactorServiceClient(cc grpc.ClientConnInterface) LibcalcFactorServiceClient {
+	return &libcalcFactorServiceClient{cc}
+}
+
+func (c *libcalcFactorServiceClient) Factor(ctx context.Context, in *LibcalcFactorsRequest, opts ...grpc.CallOption) (LibcalcFactorService_FactorClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_LibcalcFactorService_serviceDesc.Streams[0], "/libcalc.LibcalcFactorService/Factor", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &libcalcFactorServiceFactorClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type LibcalcFactorService_FactorClient interface {
+	Recv() (*LibcalcFactorsResponse, error)
+	grpc.ClientStream
+}
+
+type libcalcFactorServiceFactorClient struct {
+	grpc.ClientStream
+}
+
+func (x *libcalcFactorServiceFactorClient) Recv() (*LibcalcFactorsResponse, error) {
+	m := new(LibcalcFactorsResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+// LibcalcFactorServiceServer is the server API for LibcalcFactorService service.
+type LibcalcFactorServiceServer interface {
+	// define unary API
+	Factor(*LibcalcFactorsRequest, LibcalcFactorService_FactorServer) error
+}
+
+// UnimplementedLibcalcFactorServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedLibcalcFactorServiceServer struct {
+}
+
+func (*UnimplementedLibcalcFactorServiceServer) Factor(*LibcalcFactorsRequest, LibcalcFactorService_FactorServer) error {
+	return status.Errorf(codes.Unimplemented, "method Factor not implemented")
+}
+
+func RegisterLibcalcFactorServiceServer(s *grpc.Server, srv LibcalcFactorServiceServer) {
+	s.RegisterService(&_LibcalcFactorService_serviceDesc, srv)
+}
+
+func _LibcalcFactorService_Factor_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(LibcalcFactorsRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(LibcalcFactorServiceServer).Factor(m, &libcalcFactorServiceFactorServer{stream})
+}
+
+type LibcalcFactorService_FactorServer interface {
+	Send(*LibcalcFactorsResponse) error
+	grpc.ServerStream
+}
+
+type libcalcFactorServiceFactorServer struct {
+	grpc.ServerStream
+}
+
+func (x *libcalcFactorServiceFactorServer) Send(m *LibcalcFactorsResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+var _LibcalcFactorService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "libcalc.LibcalcFactorService",
+	HandlerType: (*LibcalcFactorServiceServer)(nil),
+	Methods:     []grpc.MethodDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "Factor",
+			Handler:       _LibcalcFactorService_Factor_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "libcalc/libcalc.proto",
 }

@@ -18,3 +18,15 @@ service LibcalcService {
   // define unary API
   rpc Libcalc(LibcalcRequest) returns (LibcalcResponse) {};
 }
+
+message LibcalcFactorsRequest {
+  int32 kint = 1;
+}
+
+message LibcalcFactorsResponse { string result = 1; }
+
+
+service LibcalcFactorService {
+  // define unary API
+  rpc Factor(LibcalcFactorsRequest) returns (stream LibcalcFactorsResponse) {};
+}
