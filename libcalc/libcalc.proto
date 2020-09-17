@@ -19,7 +19,7 @@ service LibcalcService {
 }
 
 message LibcalcFactorsRequest {
-  int32 kint = 1;
+  int32 nint = 1;
 }
 
 message LibcalcFactorsResponse { string result = 1; }
